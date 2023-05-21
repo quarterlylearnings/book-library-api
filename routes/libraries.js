@@ -19,7 +19,19 @@ router.get('/:id/shelves', function(req, res, next) {
       .where({ libraryId: id })
       .then(shelves => res.json(shelves))
       .catch(err => next(err));
-  });
+});
+
+  // GET all books for a specific library by ID
+router.get('/:id/books', function(req, res, next) {
+    const { id } = req.params;
+  
+    knex('books')
+      .join('shelves', 'shelves.id', 'books.shelfId')
+      .select('books.*')
+      .where({ 'shelves.libraryId': id })
+      .then(books => res.json(books))
+      .catch(err => next(err));
+});
 
 // GET a specific library by its ID
 router.get('/:id', function(req, res, next) {
