@@ -10,6 +10,18 @@ router.get('/', function(req, res, next) {
     .catch(err => next(err));
 });
 
+// GET all books for a specific shelf by ID
+router.get('/:id/books', function(req, res, next) {
+    const { id } = req.params;
+  
+    knex('books')
+      .select('*')
+      .where({ shelfId: id })
+      .then(books => res.json(books))
+      .catch(err => next(err));
+  });
+  
+
 // GET a specific shelf by ID
 router.get('/:id', function(req, res, next) {
   const { id } = req.params;
