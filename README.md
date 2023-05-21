@@ -1,6 +1,4 @@
-
-
-# Library API
+# COR Library API
 
 This is an API for a library application. It's built with [Express.js](https://expressjs.com/) and uses [Knex.js](http://knexjs.org/) as a query builder to access a PostgreSQL database.
 
@@ -16,20 +14,20 @@ The API provides comprehensive functionality for managing libraries, shelves, an
 
 To run the app locally, you'll need Node.js, npm, and PostgreSQL installed on your machine.
 
-- Clone the repository:
+### Clone the repository:
 
 ```bash
 git clone https://github.com/quarterlylearnings/book-library-api.git
 cd book-library-api
 ```
 
-- Install the dependencies:
+### Install the dependencies:
 
 ```bash
 npm install
 ```
 
-- Set up the database:
+### Set up the database:
 
 First, create a new PostgreSQL database. Then, update the `knexfile.js` file with your database configuration (the name of your database, your username, and your password).
 
@@ -47,13 +45,15 @@ npx knex migrate:latest
 npx knex seed:run
 ```
 
-- Start the server:
+### Start the server:
 
 ```bash
 npm start
 ```
 
 The app should now be running on [http://localhost:3000](http://localhost:3000).
+
+----
 
 ## API Documentation
 
