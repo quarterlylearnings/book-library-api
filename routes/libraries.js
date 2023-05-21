@@ -10,6 +10,17 @@ router.get('/', function(req, res, next) {
     .catch(err => next(err));
 });
 
+// GET all shelves for a specific library by ID
+router.get('/:id/shelves', function(req, res, next) {
+    const { id } = req.params;
+  
+    knex('shelves')
+      .select('*')
+      .where({ libraryId: id })
+      .then(shelves => res.json(shelves))
+      .catch(err => next(err));
+  });
+
 // GET a specific library by its ID
 router.get('/:id', function(req, res, next) {
   const { id } = req.params;
