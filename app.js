@@ -23,4 +23,15 @@ app.use('/libraries', librariesRouter);
 app.use('/shelves', shelvesRouter);
 app.use('/books', booksRouter);
 
+// 404 Not Found handler
+app.use(function(req, res, next) {
+    res.status(404).send('404 Not Found');
+});
+  
+  // Error handling middleware
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('A server error occurred');
+});
+
 module.exports = app;
