@@ -31,7 +31,7 @@ npm install
 
 First, create a new PostgreSQL database. Then, update the `knexfile.js` file with your database configuration (the name of your database, your username, and your password).
 
-Then, use the `knex` command line interfact to:
+Then, use the `knex` command line interface to:
 
 1. create the necessary tables and 
 
@@ -85,7 +85,7 @@ The API can be accessed at the following endpoints:
 - `DELETE /books/:id`: Delete a specific book by ID.
 
 All `POST` and `PUT` requests must include a `Content-Type: application/json` header.
-
+g
 ## Error Handling
 
 In case of an error, the API will return a JSON response with a `message` property describing the error. For example:
