@@ -59,30 +59,27 @@ The app should now be running on [http://localhost:3000](http://localhost:3000).
 
 The API can be accessed at the following endpoints:
 
-- `GET /libraries`: Get all libraries.
-- `POST /libraries`: Create a new library. Requires a JSON body with `name`.
 
-- `GET /libraries/:id`: Get a specific library by ID.
-- `PUT /libraries/:id`: Update a specific library by ID. Requires a JSON body with `name`.
-- `DELETE /libraries/:id`: Delete a specific library by ID.
+| HTTP Method | Endpoint                 | Description                                      | Required JSON Body                           |
+|-------------|--------------------------|--------------------------------------------------|----------------------------------------------|
+| GET         | /libraries               | Get all libraries                                | N/A                                          |
+| POST        | /libraries               | Create a new library                             | name                                         |
+| GET         | /libraries/:id           | Get a specific library by ID                     | N/A                                          |
+| PUT         | /libraries/:id           | Update a specific library by ID                  | name                                         |
+| DELETE      | /libraries/:id           | Delete a specific library by ID                  | N/A                                          |
+| GET         | /libraries/:id/books     | Get all books in a specific library              | N/A                                          |
+| GET         | /shelves                 | Get all shelves                                  | N/A                                          |
+| POST        | /shelves                 | Create a new shelf                               | libraryId, genre                             |
+| GET         | /shelves/:id             | Get a specific shelf by ID                       | N/A                                          |
+| PUT         | /shelves/:id             | Update a specific shelf by ID                    | libraryId, genre                             |
+| DELETE      | /shelves/:id             | Delete a specific shelf by ID                    | N/A                                          |
+| GET         | /shelves/:id/books       | Get all books on a specific shelf                | N/A                                          |
+| GET         | /books                   | Get all books                                    | N/A                                          |
+| POST        | /books                   | Create a new book                                | shelfId, title, author, summary, coverImageUrl |
+| GET         | /books/:id               | Get a specific book by ID                        | N/A                                          |
+| PUT         | /books/:id               | Update a specific book by ID                     | shelfId, title, author, summary, coverImageUrl |
+| DELETE      | /books/:id               | Delete a specific book by ID                     | N/A                                          |
 
-- `GET /libraries/:id/books`: Get all books in a specific library.
-
-- `GET /shelves`: Get all shelves.
-- `POST /shelves`: Create a new shelf. Requires a JSON body with `libraryId` and `genre`.
-
-- `GET /shelves/:id`: Get a specific shelf by ID.
-- `PUT /shelves/:id`: Update a specific shelf by ID. Requires a JSON body with `libraryId` and `genre`.
-- `DELETE /shelves/:id`: Delete a specific shelf by ID.
-
-- `GET /shelves/:id/books`: Get all books on a specific shelf.
-
-- `GET /books`: Get all books.
-- `POST /books`: Create a new book. Requires a JSON body with `shelfId`, `title`, `author`, `summary`, and `coverImageUrl`.
-
-- `GET /books/:id`: Get a specific book by ID.
-- `PUT /books/:id`: Update a specific book by ID. Requires a JSON body with `shelfId`, `title`, `author`, `summary`, and `coverImageUrl`.
-- `DELETE /books/:id`: Delete a specific book by ID.
 
 All `POST` and `PUT` requests must include a `Content-Type: application/json` header.
 
