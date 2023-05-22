@@ -85,7 +85,7 @@ The API can be accessed at the following endpoints:
 - `DELETE /books/:id`: Delete a specific book by ID.
 
 All `POST` and `PUT` requests must include a `Content-Type: application/json` header.
-g
+
 ## Error Handling
 
 In case of an error, the API will return a JSON response with a `message` property describing the error. For example:
