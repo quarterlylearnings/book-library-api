@@ -1,8 +1,8 @@
-const bookshelf = require('../bookshelf');
+const bookshelf = require("../bookshelf");
 
-const Library = bookshelf.model('Library',{
-    tableName: 'libraries',
-    idAttribute: 'id'
+const Library = bookshelf.model("Library", {
+    tableName: "libraries",
+    idAttribute: "id",
 });
 
-module.exports = Library
+module.exports = Library;
