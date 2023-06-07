@@ -1,6 +1,5 @@
 var express = require("express");
 var router = express.Router();
-var knex = require("../db"); // Import knexfile
 const Library = require("../models/Library"); // importing the Library model which already has a configuration (via Bookshelf for connecting to the database)
 
 // GET all libraries
