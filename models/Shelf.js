@@ -7,6 +7,9 @@ const Shelf = bookshelf.model("Shelf", {
     library: function () {
         return this.belongsTo(Library, "libraryId");
     },
+    books: function() {
+        return this.hasMany(Book, "shelfId")
+    }
 });
 
 module.exports = Shelf;
