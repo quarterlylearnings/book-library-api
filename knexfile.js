@@ -9,7 +9,8 @@ module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: 'postgres://localhost/cor-book-library'
+    connection: 'postgres://localhost/cor-book-library',
+    debug: true
   },
 
   staging: {
